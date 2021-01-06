@@ -25,7 +25,7 @@ SECRET_KEY = '8sr=f!_^#lr^q5bondq+0051bb(q2@!$-fc4vvxly(1+4cgf6y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['boneyard-be.herokuapp.com']
 
 
 # Application definition
