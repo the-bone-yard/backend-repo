@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main_app import views
+from main_app import services
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.home),
-    path('', views.index)
+    path('', views.index),
+    url(r'^api/(?P<pk>[0-9]+)', services.get_parks),
 ]
