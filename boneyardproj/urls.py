@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.home),
     path('', views.index),
-    url(r'^api/(?P<pk>[0-9]+)', services.get_parks),
+    url(r'^api/(.*)/', services.get_parks),
 ]

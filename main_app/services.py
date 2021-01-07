@@ -12,7 +12,7 @@ def get_parks(self, input):
     info = requests.get(
         'https://maps.googleapis.com/maps/api/place/findplacefromtext/json').json()
     data = {
-    'name': info['title']
+    'This is the ridiculous thing you sent to the BE. Dont waste our time': pk
     }
     return JsonResponse(data)
 
