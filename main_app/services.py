@@ -1,31 +1,20 @@
 from django.http import JsonResponse
 import requests
 import code
+from decouple import config
+import re
+
 
 #my progress
-def get_parks(self, input):
-    code.interact(local=dict(globals(), **locals()))
+def get_parks(self, location):
+    API_KEY = config('KEY')
     coordinates = location
-    endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE&input=%s&location=%s&radius=49999' % (input, coordinates)
+    endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=%s&input=dog park&location=%s&radius=49999' % (API_KEY, location)
 
-    # endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?input=%s&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE' % input
-    # variables = {
-    #     'input' : input,
-    #     'inputtye' : 'textquery',
-    #     'fields' : 'photos,formatted_address,name,rating,geometry',
-    #     'key': 'AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE'
-    # }
     info = requests.get(endpoint_url).json()
+    # code.interact(local=dict(globals(), **locals()))
+
     data = {
-    'test': info["candidates"]
+    'test': info["results"]
     }
     return JsonResponse(data)
-
-# def get_parks(self, pk):
-#     info = requests.get(
-#         'https://jsonplaceholder.typicode.com/todos/1').json()
-#     data = {
-#     'name': info['title']
-#     }
-#     return JsonResponse(data)
-# Copy for reference, in case i fuck the top one up
