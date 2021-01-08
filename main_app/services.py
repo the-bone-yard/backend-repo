@@ -1,18 +1,23 @@
 from django.http import JsonResponse
 import requests
+import code
 
+#my progress
 def get_parks(self, input):
-    endpoint_url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json'
-    params = {
-        'input' = input,
-        'inputtye' = 'textquery',
-        'fields' = 'photos,formatted_address,name,rating,geometry',
-        'key' = self.apiKey
-    }
-    info = requests.get(
-        'https://maps.googleapis.com/maps/api/place/findplacefromtext/json').json()
+    code.interact(local=dict(globals(), **locals()))
+    coordinates = location
+    endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE&input=%s&location=%s&radius=49999' % (input, coordinates)
+
+    # endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?input=%s&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE' % input
+    # variables = {
+    #     'input' : input,
+    #     'inputtye' : 'textquery',
+    #     'fields' : 'photos,formatted_address,name,rating,geometry',
+    #     'key': 'AIzaSyAb6K8lFSR2jjUv5GwqKvTMgdumdWPh-FE'
+    # }
+    info = requests.get(endpoint_url).json()
     data = {
-    'This is the ridiculous thing you sent to the BE. Dont waste our time': pk
+    'test': info["candidates"]
     }
     return JsonResponse(data)
 
