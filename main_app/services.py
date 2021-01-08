@@ -9,7 +9,7 @@ import re
 def get_parks(self, location):
     API_KEY = config('KEY')
     coordinates = location
-    endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=%s&input=dog park&location=%s&radius=49999' % (API_KEY, location)
+    endpoint_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=%s&input=dog park&location=%s&radius=2000' % (API_KEY, location)
 
     info = requests.get(endpoint_url).json()
     # code.interact(local=dict(globals(), **locals()))
@@ -17,4 +17,5 @@ def get_parks(self, location):
     data = {
     'test': info["results"]
     }
+    # import code; code.interact(local=dict(globals(), **locals()))
     return JsonResponse(data)

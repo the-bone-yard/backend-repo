@@ -1,7 +1,7 @@
 # The Bone Yard -- backend-repo
 
 ## Purpose
-This repo is meant to serve as the backend portion of The Bone Yard application.
+This application serves as an API producer for the main applicaiton. [The front-end can be found here](https://github.com/the-bone-yard/frontend). This repo is meant to serve as the backend portion of The Bone Yard application. 
 
 ## Contributors
 
@@ -21,6 +21,14 @@ Travis McKinstry
 <br />
 <br />
 <br />
+
+## Using the API
+
+- The application main page can be found here: https://boneyard-be.herokuapp.com/. If you visit that URL as is, you'll see a generic landing page. To access an endpoint you'll need to submit an inquiry to one of the contributors of this repo. We will then give you access to the various end-points. The endpoints that are functional so far;
+
+  1. Finding all dog parks nearby
+  2. Find a specific dog park
+  3. Get directions from your current location to a specific dog park
 
 
 ---
