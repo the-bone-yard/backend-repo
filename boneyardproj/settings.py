@@ -118,6 +118,7 @@ USE_TZ = True
 KEY = 'AIzaSyCC2KfQO_uWGSVxpvdfZEy-JQRNif_iD40 '
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
