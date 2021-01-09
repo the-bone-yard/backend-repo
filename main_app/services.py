@@ -1,10 +1,10 @@
 from django.http import JsonResponse
 import requests
 import json
-from django.conf import settings
+from decouple import config
 
 def get_parks(self, coordinates='', query=''):
-    API_KEY = settings.KEY
+    API_KEY = config('KEY')
     radius = 2000
     endpoint_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=%s&keyword=dog+park&location=%s&radius=2000" % (API_KEY,coordinates)
 
