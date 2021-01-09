@@ -9,8 +9,8 @@ def get_parks(self, coordinates=''):
     endpoint_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key=%s&keyword=dog+park&location=%s&radius=2000" % (KEY,coordinates)
 
     data = format_data(requests.get(endpoint_url).json())
-
-    return JsonResponse([data], safe=False)
+    # import code; code.interact(local=dict(globals(), **locals()))
+    return JsonResponse(data, safe=False)
 
 def format_data(info):
     parks = []
