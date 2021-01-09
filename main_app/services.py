@@ -10,7 +10,7 @@ def get_parks(self, coordinates=''):
 
     data = format_data(requests.get(endpoint_url).json())
 
-    return JsonResponse(data, safe=False)
+    return JsonResponse(['hey'], safe=False)
 
 def format_data(info):
     parks = []
