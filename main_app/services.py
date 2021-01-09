@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 import requests
 import json
-from main_app.models import Park
 from django.conf import settings
 
 def get_parks(self, coordinates='', query=''):
