@@ -19,3 +19,10 @@ class ApiTestCase(TestCase):
         self.assertEqual(type(data), dict)
         self.assertEqual(data['userId'], 1)
         self.assertEqual(str(data.keys()), "dict_keys(['userId', 'id', 'title', 'completed'])")
+
+    def test_can_return_error(self):
+        """Can return an error when entering incorrect coordinate format"""
+        data = requests.get('https://jsonplaceholder.typicode.com/todos/1').json()
+        self.assertEqual(type(data), dict)
+        self.assertEqual(data['userId'], 1)
+            self.assertEqual(str(data.keys()), 'Error': "Input is incorrect. Please enter either coordinates as '132.5543,-204.5566' or 'city,state'")
