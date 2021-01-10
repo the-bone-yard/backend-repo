@@ -22,7 +22,7 @@ def get_parks(self, coordinates=''):
 def format_data(info):
     parks = []
     for park in info['results']:
-        code.interact(local=dict(globals(), **locals()))
+        # code.interact(local=dict(globals(), **locals()))
         data = {
             'formatted_address': park['vicinity'],
             'geometry': park['geometry'],
