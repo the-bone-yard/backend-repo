@@ -7,9 +7,9 @@ import re
 
 def get_parks(self, coordinates=''):
     KEY = config('KEY')
-    radius = 2000
+    radius = 48000
     if len(coordinates.split(',')[0]) > 1 and float(coordinates.split(',')[0]):
-        endpoint_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key={KEY}&keyword=dog+park&location={coordinates}&radius=2000"
+        endpoint_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?fields=photos,formatted_address,name,rating,opening_hours,geometry&key={KEY}&keyword=dog+park&location={coordinates}&radius={radius}"
         data = format_data(requests.get(endpoint_url).json())
     elif re.match(r'^-?\d+(?:\.\d+)?$', coordinates.split(',')[0]) is None:
         info = {'info': "geocode_api"}
