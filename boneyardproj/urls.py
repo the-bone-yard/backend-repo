@@ -24,4 +24,5 @@ urlpatterns = [
     path('test/', views.home),
     path('', views.index),
     url(r'^api/coordinates=(.*)/', services.get_parks),
+    url(r'^api/current=(.*)/to=(.*)/', services.get_directions),
 ]
