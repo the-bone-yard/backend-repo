@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main_app import views
-from main_app import services
+from main_app.services import Services
 from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.home),
     path('', views.index),
-    url(r'^api/coordinates=(.*)/', services.get_parks),
-    url(r'^api/current=(.*)/to=(.*)/', services.get_directions),
+    url(r'^api/coordinates=(.*)/', Services.get_parks),
+    url(r'^api/current=(.*)/to=(.*)/', Services.get_directions),
 ]
