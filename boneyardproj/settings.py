@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'user',
+    'park',
 ]
 
 MIDDLEWARE = [
@@ -143,4 +143,3 @@ STATICFILES_DIRS = (
 
 STATICFILES_STOREAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-AUTH_USER_MODEL = 'main_app.User'

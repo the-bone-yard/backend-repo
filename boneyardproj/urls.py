@@ -24,6 +24,5 @@ urlpatterns = [
     path('test/', views.home),
     path('', views.index),
     url(r'^api/coordinates=(.*)/', services.get_parks),
-    url(r'^api/user/', include('user.urls')),
-    # path('api/user/', include('user.urls')),
+    url(r'^api/park/', include('park.urls')),
 ]
