@@ -6,9 +6,9 @@ class Park(models.Model):
     name = models.CharField(max_length=300)
     formatted_address = models.CharField(max_length=300)
     opening_hours = models.CharField(max_length=1000, default='')
-    photo = models.CharField
-    rating = models.CharField
-    
+    photo = models.CharField(max_length=1000, default='')
+    rating = models.CharField(max_length=100, default='0')
+
 
 def create_park(self, name, formatted_address, opening_hours, photo, rating, **extra_fields):
     park = self.model(name=self.name, formatted_address=self.formatted_address, opening_hours=self.opening_hours, photo=self.photo, rating=self.rating)
@@ -34,4 +34,3 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-
