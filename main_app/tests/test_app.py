@@ -2,7 +2,6 @@ from django.test import TestCase
 import requests
 import code
 from main_app import services
-from rest_framework.test import APIRequestFactory
 import json
 
 
