@@ -13,6 +13,7 @@ import os
 # import django_heroku
 from pathlib import Path
 from decouple import config
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -142,3 +143,4 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STOREAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
