@@ -53,4 +53,4 @@ class Services:
                 'photos': park.photo,
                 'rating': park.rating}
             parks.append(data)
-        return HttpResponse(parks, content_type='json')
+        return JsonResponse(parks, safe=False)
