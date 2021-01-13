@@ -9,6 +9,9 @@ class Park(models.Model):
     opening_hours = models.CharField(max_length=1000, default='')
     photo = models.CharField(max_length=1000, default='')
     rating = models.CharField(max_length=100, default='0')
+    email = models.CharField(max_length=100, default='NO EMAIL')
+    lat = models.FloatField(max_length=20, default=0.0)
+    lng = models.FloatField(max_length=20, default=0.0)
 
 
 def create_park(self, name, formatted_address, opening_hours, photo, rating, **extra_fields):
