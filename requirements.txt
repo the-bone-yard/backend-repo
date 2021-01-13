@@ -9,3 +9,4 @@ requests
 python-decouple==3.4
 django-cors-headers
 djangorestframework
+psycopg2
