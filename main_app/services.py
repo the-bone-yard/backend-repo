@@ -51,6 +51,10 @@ class Services:
                 'address': park.formatted_address,
                 'opening_hours': park.opening_hours,
                 'photos': park.photo,
-                'rating': park.rating}
+                'rating': park.rating,
+                'email': park.email,
+                'lat': park.lat,
+                'lng': park.lng
+                }
             parks.append(data)
         return JsonResponse(parks, safe=False)
