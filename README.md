@@ -53,6 +53,15 @@ Once you are in the right directory, type the following in your terminal: `pytho
 **5. Running the local host server**
 Make sure you’re in boneyard2. If you type ls you should see `README.md`, `main_app`, `manage.py`, `boneyardproj`, `db.sqlite3`, `venv`, etc. If you’re in the right directory, start the virtual environment by typing the following in your terminal: `source venv/bin/activate`, once your virtual environment is running, type the following command: `python3 manage.py runserver`. If you’ve done it all correctly, you should be able to navigate to `http://localhost:8000/` and see your application running.
 
+**Problems with Heroku not updating database:**
+
+The following configurations have been added to the project;
+- `django-heroku` should be in the `requirements.txt` file
+- `settings.py` should have `import django_heroku` near the top, and `django_heroku.settings(locals())` at the bottom
+- Any time the Heroku app is updated (right now it's on automatic deployment), the DB should update. If it doesnt, try running the following commands;
+`heroku run python manage.py makemigrations`
+`heroku run python manage.py migrate`
+
 ---
 <br />
 <br />
