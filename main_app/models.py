@@ -18,7 +18,6 @@ def create_park(self, name, formatted_address, opening_hours, photo, rating, **e
     code.interact(local=dict(globals(), **locals()))
     park = self.model(name=self.name, formatted_address=self.formatted_address, opening_hours=self.opening_hours, photo=self.photo, rating=self.rating)
     park.save(using=self._db)
-
     return park
 
 class UserManager(BaseUserManager):
