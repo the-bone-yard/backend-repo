@@ -1,4 +1,5 @@
 import json
+import code
 
 class Serializer:
 
@@ -20,3 +21,12 @@ class Serializer:
                 'rating': park['rating']}
             parks.append(data)
         return parks
+
+    @staticmethod
+    def format_directions(info):
+        narratives = []
+        data = info['route']['legs'][0]['maneuvers']
+        for narr in data:
+            narratives.append(narr['narrative'])
+
+        return narratives

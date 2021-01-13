@@ -32,17 +32,14 @@ class Services:
         endpoint_url = f"https://www.mapquestapi.com/directions/v2/route?key={KEY}&from={current}&to={to}&routeType=fastest"
         data = requests.get(endpoint_url).json()
 
+        info = {"narratives": Serializer.format_directions(data)}
+        return JsonResponse(info, safe=False)
+
     @staticmethod
     def get_coordinates(info):
         endpoint = f"https://www.mapquestapi.com/geocoding/v1/address?key={config('MAP_Q')}&location={info}"
         response = requests.get(endpoint).json()
         return Serializer.format_coordiantes(response)
-        # code.interact(local=dict(globals(), **locals()))
-
-
-    @staticmethod
-    def format_directions(info):
-        'dude'
 
     @staticmethod
     def get_all_parks(self):
