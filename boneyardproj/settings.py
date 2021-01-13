@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app.apps.MainAppConfig',
     'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'park',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +142,4 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STOREAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
