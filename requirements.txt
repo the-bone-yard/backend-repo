@@ -10,5 +10,4 @@ requests
 python-decouple==3.4
 django-cors-headers
 djangorestframework
-gunicorn
 django-heroku
