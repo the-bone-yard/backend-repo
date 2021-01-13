@@ -1,4 +1,5 @@
 from django.db import models
+import code
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                         PermissionsMixin
 class Park(models.Model):
@@ -11,10 +12,12 @@ class Park(models.Model):
 
 
 def create_park(self, name, formatted_address, opening_hours, photo, rating, **extra_fields):
+    code.interact(local=dict(globals(), **locals()))
     park = self.model(name=self.name, formatted_address=self.formatted_address, opening_hours=self.opening_hours, photo=self.photo, rating=self.rating)
     park.save(using=self._db)
 
     return park
+
 class UserManager(BaseUserManager):
 
     def create_user(self, email, **extra_fields):
