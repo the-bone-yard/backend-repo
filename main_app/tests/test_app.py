@@ -2,6 +2,7 @@ from django.test import TestCase
 import requests
 import code
 from main_app import services
+import json
 
 
 class ApiTestCase(TestCase):
@@ -44,3 +45,17 @@ class ApiTestCase(TestCase):
         self.assertIn('opening_hours', data[0])
         self.assertIn('photos', data[0])
         self.assertIn('rating', data[0])
+
+    def test_can_make_map_API_call_and_save_a_park(self):
+        """Can make an API call and expect specific attributes (run local server first)"""
+        params = {
+        "name": "Fake Park",
+        "formatted_address": "1234 Fake Street",
+        "opening_hours": "never",
+        "photo": "too good for photos",
+        "rating": "100 mofo"
+        }
+        data = requests.post('http://localhost:8000/api/park/create/', params)
+        self.assertEqual(type(data), requests.models.Response)
+
+        result = requests.get('http://localhost:8000/api/park/all')

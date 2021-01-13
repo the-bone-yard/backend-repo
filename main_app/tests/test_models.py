@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from main_app.models import Park
 
 class ModelTests(TestCase):
-#Trying to get this test to pass. Getting error 'unexpected keyword argument 'photo''
     def test_create_park_with_name_and_address(self):
         """Test creating a new park with name and address"""
         name = 'park'

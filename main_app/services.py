@@ -5,6 +5,8 @@ from decouple import config
 import code
 import re
 from main_app.serializer import Serializer
+from main_app.models import Park
+from django.http import HttpResponse
 
 class Services:
 
@@ -41,3 +43,17 @@ class Services:
     @staticmethod
     def format_directions(info):
         'dude'
+
+    @staticmethod
+    def get_all_parks(self):
+        info = Park.objects.all()
+        parks = []
+        for park in info:
+            data = {
+                'name': park.name,
+                'address': park.formatted_address,
+                'opening_hours': park.opening_hours,
+                'photos': park.photo,
+                'rating': park.rating}
+            parks.append(data)
+        return HttpResponse(parks, content_type='json')
