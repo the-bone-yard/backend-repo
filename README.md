@@ -3,7 +3,7 @@
 
 ## Purpose
 
-This application serves as an API producer for the main applicaiton. [The front-end can be found here](https://github.com/the-bone-yard/frontend). This repo is meant to serve as the backend portion of The Bone Yard application. 
+[The front-end repo can be found here](https://github.com/the-bone-yard/frontend). This repo is meant to serve as the backend portion of The Bone Yard application. 
 
 ## Contributors
 
