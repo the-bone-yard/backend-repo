@@ -1,8 +1,6 @@
 # The Bone Yard -- backend-repo
 
-The idea behind this application is to address the issue of there not being an app currently that allows a dog owner to set up play dates for their dog, with other dogs in the area, in a safe and secure way.
-
-The main application can be found (The front-end can be found here)[https://github.com/the-bone-yard/frontend]. As of right now a user can navigate to that website and search for dog parks that are near their current location or a specified city/state. The idea is to eventually be able to set play-dates with other owners in a safe way.
+The idea behind this application is to address the issue of there not being an app currently that allows a dog owner to set up play dates for their dog, with other dogs in the area, in a safe and secure way.<br>The main application can be found (The front-end can be found here)[https://github.com/the-bone-yard/frontend]. As of right now a user can navigate to that website and search for dog parks that are near their current location or a specified city/state. The idea is to eventually be able to set play-dates with other owners in a safe way.
 
 ## Purpose
 This application serves as an API producer for the main applicaiton. (The front-end can be found here)[https://github.com/the-bone-yard/frontend]. This repo is meant to serve as the backend portion of The Bone Yard application. 
